@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let movie of movies" class="col-lg-4">
+      <app-movie-result [movie]="movie"></app-movie-result>
+    </div>
+  </div>
+</div>
