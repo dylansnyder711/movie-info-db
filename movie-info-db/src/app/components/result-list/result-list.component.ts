@@ -14,7 +14,6 @@ export class ResultListComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getResultsUpdateListener().subscribe((movies: Movie[]) => {
-      console.log(movies);
       this.movies = movies;
     });
   }

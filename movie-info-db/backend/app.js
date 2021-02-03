@@ -28,18 +28,11 @@ const apiRequest = (type, query) => {
   return axios.request(options);
 };
 
-//apiRequest("film", title.id)
-
 app.use("/search", (req, res, next) => {
-  // apiRequest("search", req.query.searchQuery).then((response) => {
-  //   console.log(response.data);
-  //
-  // });
-
   apiRequest(req.query.type, req.query.searchQuery)
-    .then((todo) => {
-      console.log("todo", todo.data.titles);
-      res.status(200).json(todo.data.titles);
+    .then((result) => {
+      console.log(result.data);
+      res.status(200).json(result.data.titles);
     })
     .catch((error) => {
       console.log(error);
